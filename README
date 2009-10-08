@@ -1,0 +1,32 @@
+####################################################################
+NAdivsor
+####################################################################
+
+This is a small library which adds Aspects during runtime.
+
+If you are looking for traditional Aspects have a look at postsharp.org
+
+The difference compared to traditional Aspects are:
+- Aspects can be instantiated, therefor can have dependencies in the constructor (fits very well with DI)
+- Trades fast compilation against slower execution, everything is done during runtime
+- Aspects can have a differnt lifetime than there intercepted classes. 
+
+Some Usecases which can't be easily solved with compile time weaved aspects:
+- unit testing of aspects
+- because aspects are normal objects they can be instantiated, they can have dependencies. 
+- Using Mocked aspects during unit tests 
+- JointPoint can only be defined during runtime.
+
+
+Usage:
+//Instantiate a new SecurityAspect
+IAspect securityAspect = new SecurityAspect(user);
+
+//Creates a Proxy, chooses the Aspect from the List by the JointPointDefinition
+Advisor advisor = new Advisor(JointPointDefinition.AttributeBasedJointPointDefinition, new List<IAspect>() {securityAspect, loggingAspect});
+
+//Gets the Proxy which is intercepted by Aspects
+ISimpleService myService = advisor.GetAdvicedProxy<ISimpleService>(simpleService);
+
+
+

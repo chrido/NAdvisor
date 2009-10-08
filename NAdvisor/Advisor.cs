@@ -26,20 +26,12 @@ namespace NAdvisor
         private readonly Func<Type, IAspectEnvironment, IList<IAspect>, IList<IAspect>> _getAspectsForJointPoint;
         private readonly IList<IAspect> _aspects;
 
-        /// <summary>
-        /// Default Behaviour is to Intercept all Methods with all Aspects
-        /// </summary>
-        /// <param name="aspects"></param>
         public Advisor(IList<IAspect> aspects)
         {
             _aspects = aspects;
             _getAspectsForJointPoint = (type, methodInfo, availableAspects) => _aspects;
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="getAspectsForJointPoint">is called on first Methodentry</param>
-        /// <param name="aspects"></param>
+
         public Advisor(Func<Type, IAspectEnvironment, IList<IAspect>, IList<IAspect>> getAspectsForJointPoint, IList<IAspect> aspects)
         {
             _getAspectsForJointPoint = getAspectsForJointPoint;

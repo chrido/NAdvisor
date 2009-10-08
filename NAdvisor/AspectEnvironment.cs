@@ -34,19 +34,8 @@ namespace NAdvisor
         /// </summary>
         object ConcreteObject { get; }
 
-        /// <summary>
-        /// Gets a value with a key, null if not found
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="key"></param>
-        /// <returns></returns>
         T TryGetValue<T>(string key);
 
-        /// <summary>
-        /// Sets a key value pair
-        /// </summary>
-        /// <param name="key"></param>
-        /// <param name="value"></param>
         void SetValue(string key, object value);
     }
 
