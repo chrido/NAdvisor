@@ -1,0 +1,13 @@
+*~
+bin
+obj
+*.user
+*.suo
+*.bak
+*.sln.cache
+_ReSharper*
+*/build
+*/test-results
+*.pidb
+*.userprefs
+*.orig
