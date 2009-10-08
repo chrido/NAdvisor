@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAdvisor", "NAdvisor\NAdvisor.csproj", "{924BDC9D-7752-496C-B0F5-379F8D390C60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAdvisorTest", "NAdvisorTest\NAdvisorTest.csproj", "{EEE750E7-0D26-4845-8AFA-9617752454A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{924BDC9D-7752-496C-B0F5-379F8D390C60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{924BDC9D-7752-496C-B0F5-379F8D390C60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{924BDC9D-7752-496C-B0F5-379F8D390C60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{924BDC9D-7752-496C-B0F5-379F8D390C60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEE750E7-0D26-4845-8AFA-9617752454A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEE750E7-0D26-4845-8AFA-9617752454A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEE750E7-0D26-4845-8AFA-9617752454A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEE750E7-0D26-4845-8AFA-9617752454A5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
