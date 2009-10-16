@@ -34,7 +34,7 @@ namespace NAdvisor.Contrib.Test
         }
 
         [TestMethod]
-        [ExpectedException(typeof(Exception))]
+        [ExpectedException(typeof(ArgumentException))]
         public void caching_behavoior_cant_be_defined_twice()
         {
             var cc = new CachingConfig<IMethodInvokesShouldBeCachedClass>();

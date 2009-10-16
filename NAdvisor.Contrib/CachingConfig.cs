@@ -10,10 +10,14 @@ namespace NAdvisor.Contrib
     public class CachingConfig<TCachedInterface>
     {
         private readonly Dictionary<MethodInfo, object> _collectedCachingConfigsForInterface;
+        private int _createKeyCounter;
+        private int _maxArgumentsCounter;
 
         public CachingConfig()
         {
             _collectedCachingConfigsForInterface = new Dictionary<MethodInfo, object>();
+            _createKeyCounter = 0;
+            _maxArgumentsCounter = 0;
         }
 
 
@@ -26,14 +30,16 @@ namespace NAdvisor.Contrib
 
         public CachingConfig<TCachedInterface> CreateCachingKey(Expression<Action<TCachedInterface>> methodExpression)
         {
-            LambdaExpression expression = methodExpression as LambdaExpression;
+            _createKeyCounter = 0;
+            _maxArgumentsCounter = 0;
+            var expression = methodExpression as LambdaExpression;
 
             var methodCall = expression.Body as MethodCallExpression;
             if (methodCall == null)
-                throw new Exception("needs a Methodcall on Interface as parameter");
+                throw new ArgumentException("needs a Methodcall on Interface as parameter");
 
             if(_collectedCachingConfigsForInterface.ContainsKey(methodCall.Method))
-                throw new Exception("Caching behaviour of a Method can't be defined twice");
+                throw new ArgumentException("Caching behaviour of a Method can't be defined twice");
 
             _collectedCachingConfigsForInterface.Add(methodCall.Method, new object());
 
@@ -44,6 +50,8 @@ namespace NAdvisor.Contrib
         {
             public TFromClass From<TFromClass>(Func<TFromClass, TChachingKey> functionToCreateKey)
             {
+                //TODO add functions for caching
+
                 return default(TFromClass);
             }
         }
