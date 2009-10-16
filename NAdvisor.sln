@@ -7,9 +7,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAdvisorTest", "NAdvisorTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAdvisor.Contrib", "NAdvisor.Contrib\NAdvisor.Contrib.csproj", "{0C92D349-3D54-47F7-8468-5BF36BAF3CA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAdvisor.Contrib.Tests", "NAdvisor.Contrib.Tests\NAdvisor.Contrib.Tests.csproj", "{BED18BB2-BD9E-44DC-89EE-401B5C3652A8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAdvisor.Contrib.Test", "NAdvisor.Contrib.Test\NAdvisor.Contrib.Test.csproj", "{3D4E80A5-8C83-4A6B-97F6-C46B96308CCF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5CF09232-5830-459C-9115-28284BA0B6A4}"
+	ProjectSection(SolutionItems) = preProject
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+		NAdvisor.vsmdi = NAdvisor.vsmdi
+	EndProjectSection
 EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = NAdvisor.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -27,10 +36,10 @@ Global
 		{0C92D349-3D54-47F7-8468-5BF36BAF3CA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C92D349-3D54-47F7-8468-5BF36BAF3CA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C92D349-3D54-47F7-8468-5BF36BAF3CA7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BED18BB2-BD9E-44DC-89EE-401B5C3652A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BED18BB2-BD9E-44DC-89EE-401B5C3652A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BED18BB2-BD9E-44DC-89EE-401B5C3652A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BED18BB2-BD9E-44DC-89EE-401B5C3652A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D4E80A5-8C83-4A6B-97F6-C46B96308CCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D4E80A5-8C83-4A6B-97F6-C46B96308CCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D4E80A5-8C83-4A6B-97F6-C46B96308CCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D4E80A5-8C83-4A6B-97F6-C46B96308CCF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

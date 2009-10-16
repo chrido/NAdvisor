@@ -1,16 +1,19 @@
 ﻿using System;
+using System.Text;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using MbUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace NAdvisor.Contrib.Tests
+namespace NAdvisor.Contrib.Test
 {
-    [TestFixture]
-    public class CachingAspectTests
+    /// <summary>
+    /// Summary description for UnitTest1
+    /// </summary>
+    [TestClass]
+    public class UnitTest1
     {
-        [Test]
-        public void TestingMethodInvoke()
+        [TestMethod]
+        public void TestMethod1()
         {
             var cachingAspect = new CachingAspect();
             var cachedClass = new MethodInvokesShouldBeCachedClass();
@@ -29,17 +32,21 @@ namespace NAdvisor.Contrib.Tests
 
     public class MethodInvokesShouldBeCachedClass : IMethodInvokesShouldBeCachedClass
     {
-        
+
         public int AwfulLongComputation(string inputParameter)
         {
             int count = 0;
 
             foreach (char c in inputParameter.ToCharArray())
             {
-                count += (int) c;
+                count += (int)c;
             }
 
             return count;
         }
     }
+
 }
+
+
+
