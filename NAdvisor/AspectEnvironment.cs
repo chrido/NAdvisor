@@ -42,7 +42,7 @@ namespace NAdvisor
     internal class AspectEnvironment : IAspectEnvironment
     {
         private readonly Dictionary<string, object> _proxyDict;
-        private readonly object syncRoot;
+        private readonly object _syncRoot = new object();
 
         public AspectEnvironment()
         {
@@ -56,7 +56,7 @@ namespace NAdvisor
         
         public T TryGetValue<T>(string key)
         {
-            lock (syncRoot)
+            lock (_syncRoot)
             {
 
                 if (_proxyDict.ContainsKey(key))
@@ -71,7 +71,7 @@ namespace NAdvisor
 
         public void SetValue(string key, object value)
         {
-            lock (syncRoot)
+            lock (_syncRoot)
             {
                 _proxyDict[key] = value;
             }
