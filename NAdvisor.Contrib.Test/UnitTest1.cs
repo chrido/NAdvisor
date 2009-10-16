@@ -19,7 +19,7 @@ namespace NAdvisor.Contrib.Test
             var cachedClass = new MethodInvokesShouldBeCachedClass();
 
             var advisor = new Advisor(cachingAspect);
-            var advicedProxy = advisor.GetAdvicedProxy(cachedClass);
+            var advicedProxy = advisor.GetAdvicedProxy<IMethodInvokesShouldBeCachedClass>(cachedClass);
 
             int result = advicedProxy.AwfulLongComputation("hello");
         }
