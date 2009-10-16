@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0C92D349-3D54-47F7-8468-5BF36BAF3CA7}</ProjectGuid>
+    <ProjectGuid>{BED18BB2-BD9E-44DC-89EE-401B5C3652A8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NAdvisor.Contrib</RootNamespace>
-    <AssemblyName>NAdvisor.Contrib</AssemblyName>
+    <RootNamespace>NAdvisor.Contrib.Tests</RootNamespace>
+    <AssemblyName>NAdvisor.Contrib.Tests</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,6 +31,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Gallio, Version=3.0.6.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\mbUnit\Gallio.dll</HintPath>
+    </Reference>
+    <Reference Include="MbUnit, Version=3.0.6.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\mbUnit\MbUnit.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq, Version=3.1.416.3, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\moq\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -45,10 +57,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CachingAspect.cs" />
+    <Compile Include="CachingAspectTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NAdvisor.Contrib\NAdvisor.Contrib.csproj">
+      <Project>{0C92D349-3D54-47F7-8468-5BF36BAF3CA7}</Project>
+      <Name>NAdvisor.Contrib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NAdvisor\NAdvisor.csproj">
       <Project>{924BDC9D-7752-496C-B0F5-379F8D390C60}</Project>
       <Name>NAdvisor</Name>

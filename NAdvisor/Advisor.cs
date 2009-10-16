@@ -26,10 +26,22 @@ namespace NAdvisor
         private readonly Func<Type, IAspectEnvironment, IList<IAspect>, IList<IAspect>> _getAspectsForJointPoint;
         private readonly IList<IAspect> _aspects;
 
+        public Advisor(IAspect aspect)
+        {
+            _aspects = new List<IAspect>(){aspect};
+            _getAspectsForJointPoint = (type, methodInfo, availableAspects) => _aspects;
+        }
+
         public Advisor(IList<IAspect> aspects)
         {
             _aspects = aspects;
             _getAspectsForJointPoint = (type, methodInfo, availableAspects) => _aspects;
+        }
+
+        public Advisor(Func<Type, IAspectEnvironment, IList<IAspect>, IList<IAspect>> getAspectsForJointPoint, IAspect aspect)
+        {
+            _getAspectsForJointPoint = getAspectsForJointPoint;
+            _aspects = new List<IAspect>() {aspect};
         }
 
         public Advisor(Func<Type, IAspectEnvironment, IList<IAspect>, IList<IAspect>> getAspectsForJointPoint, IList<IAspect> aspects)
