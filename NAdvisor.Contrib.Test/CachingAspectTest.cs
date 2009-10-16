@@ -32,6 +32,26 @@ namespace NAdvisor.Contrib.Test
 
             int result = advicedProxy.AwfulLongCacheAbleComputation("hello");
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
+        public void caching_behavoior_cant_be_defined_twice()
+        {
+            var cc = new CachingConfig<IMethodInvokesShouldBeCachedClass>();
+            cc
+                .CreateCachingKey(
+                    cck => cck.AwfulLongCacheAbleComputation(
+                        cc.CreateKey<int>().From<string>(value => value.GetHashCode()
+                        )
+                    )
+                )
+                .CreateCachingKey(
+                    cck => cck.AwfulLongCacheAbleComputation(
+                        cc.CreateKey<int>().From<string>(value => value.GetHashCode()
+                        )
+                    )
+                );
+        }
     }
 
     public interface IMethodInvokesShouldBeCachedClass
