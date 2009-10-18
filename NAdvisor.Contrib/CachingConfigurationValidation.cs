@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using Castle.DynamicProxy;
 
 namespace NAdvisor.Contrib
 {
@@ -23,6 +24,13 @@ namespace NAdvisor.Contrib
             foreach (var list in determinations)
             {
                 Action<TCachedInterface> compile = list.MethodExpression.Compile();
+                var proxyGenerator = new ProxyGenerator(new PersistentProxyBuilder());
+                var proxy = (TCachedInterface) proxyGenerator.CreateInterfaceProxyWithoutTarget(typeof (TCachedInterface), new FluentProxy());
+
+                compile.Invoke(proxy);
+
+
+
 //                compile.Invoke();
             }
         }

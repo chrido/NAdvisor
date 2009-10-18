@@ -10,7 +10,7 @@ namespace NAdvisor.Contrib
     {
         public void Intercept(IInvocation invocation)
         {
-            invocation.Proceed();
+            Type returnType = invocation.Method.ReturnType;
         }
     }
 }

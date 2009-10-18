@@ -10,7 +10,7 @@ namespace NAdvisor.Contrib
     {
         public class CachingKeyCreator<TChachingKey>
         {
-            public TFromClass From<TFromClass>(Func<TFromClass, TChachingKey> functionToCreateKey)
+            public TFromClass From<TFromClass>(Expression<Func<TFromClass, TChachingKey>> functionToCreateKey)
             {
                 //TODO add functions for caching
 
