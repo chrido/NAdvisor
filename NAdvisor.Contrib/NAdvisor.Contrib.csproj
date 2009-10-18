@@ -59,6 +59,10 @@
   <ItemGroup>
     <Compile Include="CachingAspect.cs" />
     <Compile Include="CachingConfig.cs" />
+    <Compile Include="CachingKeyCreation.cs" />
+    <Compile Include="CachingConfigurationValidation.cs" />
+    <Compile Include="FluentProxy.cs" />
+    <Compile Include="KeyDetermination.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

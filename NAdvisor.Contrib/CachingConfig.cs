@@ -7,15 +7,15 @@ using System.Text;
 
 namespace NAdvisor.Contrib
 {
-    public class CachingConfig<TCachedInterface>
+    public partial class CachingConfig<TCachedInterface>
     {
-        private readonly Dictionary<MethodInfo, object> _collectedCachingConfigsForInterface;
+        private readonly Dictionary<MethodInfo, List<KeyDetermination>> _cachingConfigsForFunction;
         private int _createKeyCounter;
         private int _maxArgumentsCounter;
 
         public CachingConfig()
         {
-            _collectedCachingConfigsForInterface = new Dictionary<MethodInfo, object>();
+            _cachingConfigsForFunction = new Dictionary<MethodInfo, List<KeyDetermination>>();
             _createKeyCounter = 0;
             _maxArgumentsCounter = 0;
         }
@@ -38,23 +38,25 @@ namespace NAdvisor.Contrib
             if (methodCall == null)
                 throw new ArgumentException("needs a Methodcall on Interface as parameter");
 
-            if(_collectedCachingConfigsForInterface.ContainsKey(methodCall.Method))
+            if(_cachingConfigsForFunction.ContainsKey(methodCall.Method))
                 throw new ArgumentException("Caching behaviour of a Method can't be defined twice");
 
-            _collectedCachingConfigsForInterface.Add(methodCall.Method, new object());
+            int argumentCount = methodCall.Arguments.Count;
+            _cachingConfigsForFunction.Add(methodCall.Method, CreateCacheConfigs(methodCall, methodExpression));
 
             return this;
         }
 
-        public class CachingKeyCreator<TChachingKey>
+        private List<KeyDetermination> CreateCacheConfigs(MethodCallExpression expression, Expression<Action<TCachedInterface>> methodExpression)
         {
-            public TFromClass From<TFromClass>(Func<TFromClass, TChachingKey> functionToCreateKey)
+            var keyDeterminationList = new List<KeyDetermination>();
+
+            foreach (Expression argument in expression.Arguments)
             {
-                //TODO add functions for caching
-
-                return default(TFromClass);
+                keyDeterminationList.Add(new KeyDetermination(){InputType = argument.Type, MethodExpression = methodExpression});
             }
-        }
 
+            return keyDeterminationList;
+        }
     }
 }

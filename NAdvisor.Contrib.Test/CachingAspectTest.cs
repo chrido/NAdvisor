@@ -34,47 +34,20 @@ namespace NAdvisor.Contrib.Test
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
-        public void caching_behavoior_cant_be_defined_twice()
+        public void Should_Create_Test_config_for_testing_a_few_methodcalls()
         {
             var cc = new CachingConfig<IMethodInvokesShouldBeCachedClass>();
             cc
                 .CreateCachingKey(
-                    cck => cck.AwfulLongCacheAbleComputation(
-                        cc.CreateKey<int>().From<string>(value => value.GetHashCode()
-                        )
-                    )
-                )
-                .CreateCachingKey(
-                    cck => cck.AwfulLongCacheAbleComputation(
-                        cc.CreateKey<int>().From<string>(value => value.GetHashCode()
-                        )
-                    )
+                cck => cck.AwfulLongCacheAbleComputation(
+                           cc.CreateKey<int>().From<string>(value => value.GetHashCode()
+                               )
+                           )
                 );
+
+            cc.BuildCachingConfiguration();
         }
     }
-
-    public interface IMethodInvokesShouldBeCachedClass
-    {
-        int AwfulLongCacheAbleComputation(string inputParameter);
-    }
-
-    public class MethodInvokesShouldBeCachedClass : IMethodInvokesShouldBeCachedClass
-    {
-
-        public int AwfulLongCacheAbleComputation(string inputParameter)
-        {
-            int count = 0;
-
-            foreach (char c in inputParameter.ToCharArray())
-            {
-                count += (int)c;
-            }
-
-            return count;
-        }
-    }
-
 }
 
 
