@@ -14,7 +14,7 @@
 
 using System;
 
-namespace NAdvisor
+namespace NAdvisor.Contrib
 {
     public class InterceptedByAttribute : Attribute
     {

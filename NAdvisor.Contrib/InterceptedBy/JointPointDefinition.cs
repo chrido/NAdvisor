@@ -16,7 +16,7 @@ using System;
 using System.Collections.Generic;
 using NAdvisor.Core;
 
-namespace NAdvisor
+namespace NAdvisor.Contrib
 {
     public class JointPointDefinition
     {

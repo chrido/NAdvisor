@@ -67,8 +67,6 @@
     <Compile Include="Interfaces\IAspectEnvironment.cs" />
     <Compile Include="Interfaces\IAspect.cs" />
     <Compile Include="Interfaces\IKeyValueStore.cs" />
-    <Compile Include="InterceptedByAttribute.cs" />
-    <Compile Include="JointPointDefinition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

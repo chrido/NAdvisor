@@ -62,6 +62,8 @@
     <Compile Include="CachingKeyCreation.cs" />
     <Compile Include="CachingConfigurationValidation.cs" />
     <Compile Include="FluentProxy.cs" />
+    <Compile Include="InterceptedBy\InterceptedByAttribute.cs" />
+    <Compile Include="InterceptedBy\JointPointDefinition.cs" />
     <Compile Include="KeyDetermination.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using MbUnit.Framework;
 using Moq;
 using NAdvisor;
+using NAdvisor.Contrib;
 using NAdvisor.Core;
 
 namespace NAdvisorTest.AttributeBasedJointPointDefinitionTests
