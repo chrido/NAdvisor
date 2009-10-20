@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using MbUnit.Framework;
-using NAdvisor;
+using NAdvisor.Core;
 
 namespace NAdvisorTest.SimpleAspectTests
 {

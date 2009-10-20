@@ -8,8 +8,8 @@
     <ProjectGuid>{924BDC9D-7752-496C-B0F5-379F8D390C60}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NAdvisor</RootNamespace>
-    <AssemblyName>NAdvisor</AssemblyName>
+    <RootNamespace>NAdvisor.Core</RootNamespace>
+    <AssemblyName>NAdvisor.Core</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>
@@ -61,8 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdviceInterceptor.cs" />
     <Compile Include="Advisor.cs" />
-    <Compile Include="AspectEnvironment.cs" />
+    <Compile Include="Implementation\AspectEnvironment.cs" />
+    <Compile Include="Interfaces\IAspectEnvironment.cs" />
+    <Compile Include="Interfaces\IAspect.cs" />
+    <Compile Include="Interfaces\IKeyValueStore.cs" />
     <Compile Include="InterceptedByAttribute.cs" />
     <Compile Include="JointPointDefinition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

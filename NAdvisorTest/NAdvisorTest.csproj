@@ -71,9 +71,9 @@
     <Compile Include="SimpleAspectTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NAdvisor\NAdvisor.csproj">
+    <ProjectReference Include="..\NAdvisor\NAdvisor.Core.csproj">
       <Project>{924BDC9D-7752-496C-B0F5-379F8D390C60}</Project>
-      <Name>NAdvisor</Name>
+      <Name>NAdvisor.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

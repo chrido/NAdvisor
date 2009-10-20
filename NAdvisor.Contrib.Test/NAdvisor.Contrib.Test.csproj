@@ -55,9 +55,9 @@
       <Project>{0C92D349-3D54-47F7-8468-5BF36BAF3CA7}</Project>
       <Name>NAdvisor.Contrib</Name>
     </ProjectReference>
-    <ProjectReference Include="..\NAdvisor\NAdvisor.csproj">
+    <ProjectReference Include="..\NAdvisor\NAdvisor.Core.csproj">
       <Project>{924BDC9D-7752-496C-B0F5-379F8D390C60}</Project>
-      <Name>NAdvisor</Name>
+      <Name>NAdvisor.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
