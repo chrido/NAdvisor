@@ -57,14 +57,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CachingAspect.cs" />
-    <Compile Include="CachingConfig.cs" />
-    <Compile Include="CachingKeyCreation.cs" />
-    <Compile Include="CachingConfigurationValidation.cs" />
-    <Compile Include="FluentProxy.cs" />
+    <Compile Include="Caching\CachingAspect.cs" />
+    <Compile Include="Caching\CachingConfig.cs" />
+    <Compile Include="Caching\CachingKeyCreation.cs" />
+    <Compile Include="Caching\CachingConfigurationValidation.cs" />
+    <Compile Include="Caching\FluentProxy.cs" />
     <Compile Include="InterceptedBy\InterceptedByAttribute.cs" />
     <Compile Include="InterceptedBy\JointPointDefinition.cs" />
-    <Compile Include="KeyDetermination.cs" />
+    <Compile Include="Caching\KeyDetermination.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
