@@ -65,16 +65,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AttributeBasedJointPointDefinitionTests.cs" />
     <Compile Include="SimpleEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleAspectTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NAdvisor.Contrib\NAdvisor.Contrib.csproj">
-      <Project>{0C92D349-3D54-47F7-8468-5BF36BAF3CA7}</Project>
-      <Name>NAdvisor.Contrib</Name>
-    </ProjectReference>
     <ProjectReference Include="..\NAdvisor\NAdvisor.Core.csproj">
       <Project>{924BDC9D-7752-496C-B0F5-379F8D390C60}</Project>
       <Name>NAdvisor.Core</Name>

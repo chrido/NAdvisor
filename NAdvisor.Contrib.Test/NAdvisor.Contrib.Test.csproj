@@ -31,11 +31,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Gallio, Version=3.1.0.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\mbUnit\Gallio.dll</HintPath>
+    </Reference>
     <Reference Include="MbUnit, Version=3.1.0.0, Culture=neutral, PublicKeyToken=eb9cfa67ee6ab36e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\References\mbUnit\MbUnit.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Moq, Version=3.1.416.3, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\moq\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -44,11 +52,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AttributeBasedJointPointDefinitionTests.cs" />
     <Compile Include="CacheConfigurationValidationTest.cs" />
     <Compile Include="IMethodInvokesShouldBeCachedClass.cs" />
     <Compile Include="MethodInvokesShouldBeCachedClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CachingAspectTest.cs" />
+    <Compile Include="SimpleEventArgs.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NAdvisor.Contrib\NAdvisor.Contrib.csproj">

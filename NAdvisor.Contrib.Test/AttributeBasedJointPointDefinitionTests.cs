@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using MbUnit.Framework;
 using Moq;
 using NAdvisor;
-using NAdvisor.Contrib;
 using NAdvisor.Core;
 
-namespace NAdvisorTest.AttributeBasedJointPointDefinitionTests
+namespace NAdvisor.Contrib.Test
 {
     [TestFixture]
     public class AttributeBasedJointPointDefinitionTests
@@ -148,7 +147,6 @@ namespace NAdvisorTest.AttributeBasedJointPointDefinitionTests
                 DoneSomething.Invoke(this, new SimpleEventArgs() { Message = doneSomething });
         }
     }
-
 
     public interface ISimpleService
     {
