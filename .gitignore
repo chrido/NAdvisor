@@ -12,3 +12,4 @@ _ReSharper*
 *.userprefs
 *.orig
 *.resharper
+TestResults
