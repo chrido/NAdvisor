@@ -11,3 +11,4 @@ _ReSharper*
 *.pidb
 *.userprefs
 *.orig
+*.resharper
