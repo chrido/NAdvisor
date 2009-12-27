@@ -12,38 +12,35 @@
 //   See the License for the specific language governing permissions and
 //   limitations under the License.
 
+using System;
 using System.Reflection;
 using System.Collections.Generic;
+using NAdvisor.Core.Implementation;
 
 namespace NAdvisor.Core
 {
     internal class AspectEnvironment : IAspectEnvironment
     {
-        private readonly Dictionary<string, object> _proxyDict;
         private readonly object _syncRoot = new object();
+        private readonly IKeyValueStore _dictKVStore;
 
-        public AspectEnvironment()
+        public AspectEnvironment(IKeyValueStore keyValueStore)
         {
-            _proxyDict = new Dictionary<string, object>();
+            _dictKVStore = keyValueStore;
         }
 
 
         public MethodInfo ConcreteMethodInfo { get; set; }
         public MethodInfo InterfaceMethodInfo { get; set; }
         public object ConcreteObject { get; set; }
-        
+        public Type ConcretetType { get; set; }
+        public Type InterfaceType { get; set; }
+
         public T TryGetValue<T>(string key)
         {
             lock (_syncRoot)
             {
-
-                if (_proxyDict.ContainsKey(key))
-                {
-                    var value = _proxyDict[key];
-                    return value is T ? (T) value : default(T);
-                }
-
-                return default(T);
+                return _dictKVStore.TryGetValue<T>(key);
             }
         }
 
@@ -51,7 +48,25 @@ namespace NAdvisor.Core
         {
             lock (_syncRoot)
             {
-                _proxyDict[key] = value;
+                _dictKVStore.SetValue(key, value);
+            }
+        }
+
+        public void SyncronizedKeyValueStoreMutator(Action<IKeyValueStore> action)
+        {
+            lock (_syncRoot)
+            {
+                action(_dictKVStore);
+            }
+        }
+
+        public object GetValueOrCreate(string key, Func<object> getOrCreateFunc)
+        {
+            lock (_syncRoot)
+            {
+                object value = getOrCreateFunc();
+                _dictKVStore.SetValue(key, value);
+                return value;
             }
         }
     }

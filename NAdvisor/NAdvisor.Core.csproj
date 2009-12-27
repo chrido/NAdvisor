@@ -64,6 +64,7 @@
     <Compile Include="AdviceInterceptor.cs" />
     <Compile Include="Advisor.cs" />
     <Compile Include="Implementation\AspectEnvironment.cs" />
+    <Compile Include="Implementation\DictionaryKeyValueStore.cs" />
     <Compile Include="Interfaces\IAspectEnvironment.cs" />
     <Compile Include="Interfaces\IAspect.cs" />
     <Compile Include="Interfaces\IKeyValueStore.cs" />

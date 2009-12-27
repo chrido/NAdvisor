@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using MbUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using NAdvisor;
 using NAdvisor.Core;
 
 namespace NAdvisor.Contrib.Test
 {
-    [TestFixture]
+    [TestClass]
     public class AttributeBasedJointPointDefinitionTests
     {
-        [Test]
+        [TestMethod]
         public void Should_Intercept_Only_Attributed_Methods()
         {
             var aspectLog = new List<string>();
@@ -41,7 +40,7 @@ namespace NAdvisor.Contrib.Test
             shouldNotBeCalledAspect.VerifyAll();
         }
 
-        [Test]
+        [TestMethod]
         public void Should_Order_Aspects_From_Left_To_Right()
         {
             var aspectLog = new List<string>();

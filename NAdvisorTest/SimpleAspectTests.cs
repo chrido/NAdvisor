@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using MbUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NAdvisor.Core;
 
 namespace NAdvisorTest.SimpleAspectTests
 {
-    [TestFixture]
+    [TestClass]
     public class SimpleAspectTests
     {
-        [Test]
+        [TestMethod]
         public void Should_Intercept_By_Aspects()
         {
             //Given
