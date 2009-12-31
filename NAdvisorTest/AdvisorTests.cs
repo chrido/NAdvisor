@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NAdvisor.Core;
 
 namespace NAdvisorTest
 {
@@ -10,14 +11,24 @@ namespace NAdvisorTest
     public class AdvisorTests
     {
         [TestMethod]
-        public void Default_Construct_Tests() //TODO CD Default Contruct Tests
+        public void Should_Only_Allow_Interfaces_to_proxy1()
         {
             //Given
+            var advisor = new Advisor(new List<IAspect>()); 
             
             //Then
-
-            //When
-            throw new Exception("bämm");
+            MSTestHelper.ShouldThrowException<ArgumentException>(() => advisor.GetAdvicedProxy<Target>(new Target()));
         }
+
+        [TestMethod]
+        public void Should_Only_Allow_Interfaces_to_proxy2()
+        {
+            //Given
+            var advisor = new Advisor(new List<IAspect>());
+
+            //Then
+            MSTestHelper.ShouldThrowException<ArgumentException>(() => advisor.GetAdvicedProxy(typeof(Target), new Target()));
+        }
+        
     }
 }

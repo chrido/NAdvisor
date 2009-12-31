@@ -61,6 +61,7 @@
     <Compile Include="AdvisorTests.cs" />
     <Compile Include="AspectEnvironmentDictionaryTests.cs" />
     <Compile Include="AspectEnvironmentTests.cs" />
+    <Compile Include="MSTestHelper.cs" />
     <Compile Include="TestClasses\Target.cs" />
     <Compile Include="TestClasses\ITarget.cs" />
     <Compile Include="TestClasses\SimpleEventArgs.cs" />
