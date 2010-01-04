@@ -6,9 +6,9 @@ namespace NAdvisor.Contrib
 {
     public class JointPointDefinition
     {
-        public static IList<IAspect> AttributeBasedJointPointDefinition(IAspectEnvironment methodInfo, IList<IAspect> availableAspects)
+        public static IList<IAspect> AttributeBasedJointPointDefinition(IAspectEnvironment aspectEnvironment, IList<IAspect> availableAspects)
         {
-            object[] customAttributes = methodInfo.ConcreteMethodInfo.GetCustomAttributes(typeof(InterceptedByAttribute), true);
+            object[] customAttributes = aspectEnvironment.ConcreteMethodInfo.GetCustomAttributes(typeof(InterceptedByAttribute), true);
             if (customAttributes.Length == 0)
                 return new List<IAspect>();                                 
 

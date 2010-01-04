@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Castle.Core.Interceptor;
+using System.Reflection;
 
 namespace NAdvisor.Core
 {
@@ -25,6 +26,7 @@ namespace NAdvisor.Core
             _keyValueStore = store;
             _concreteInstance = concreteInstance;
             _interfaceType = interfaceType;
+            _aspectEnvironmentDict = new Dictionary<MethodInfo, AspectEnvironment>();
         }
 
         public void Intercept(IInvocation invocation)
@@ -55,8 +57,10 @@ namespace NAdvisor.Core
         private AspectEnvironment CreateEnvironment(IInvocation invocation)
         {
             var environment = new AspectEnvironment(_keyValueStore);
+
             environment.ConcreteMethodInfo = invocation.GetConcreteMethod();
             environment.ConcreteObject = _concreteInstance;
+
             environment.InterfaceMethodInfo = invocation.Method;
 
             environment.ConcretetType = _concreteInstance.GetType();
@@ -68,7 +72,7 @@ namespace NAdvisor.Core
         {
             return args =>
                        {
-                           var nextAspect = restOfAspects.FirstOrDefault();
+                           IAspect nextAspect = restOfAspects.FirstOrDefault();
                            if (nextAspect != null)
                            {
                                //Recursion
@@ -82,7 +86,7 @@ namespace NAdvisor.Core
                            {
                                invocation.SetArgumentValue(i, args[i]);
                            }
-                           //Enter the concrete Method
+                           //Enter the body of the concrete Method
                            invocation.Proceed();
                            return invocation.ReturnValue;
                        };
