@@ -45,12 +45,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AttributeBasedJointPointDefinitionTests.cs" />
-    <Compile Include="CacheConfigurationValidationTest.cs" />
     <Compile Include="SampleMemozizationTests.cs" />
     <Compile Include="IMethodInvokesShouldBeCachedClass.cs" />
     <Compile Include="MethodInvokesShouldBeCachedClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CachingAspectTest.cs" />
     <Compile Include="SimpleEventArgs.cs" />
   </ItemGroup>
   <ItemGroup>

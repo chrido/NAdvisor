@@ -26,7 +26,7 @@ namespace NAdvisor.Contrib.Test
             var myService = advisor.GetAdvicedProxy<ISimpleService>(simpleService);
 
             //Then
-            var result = myService.Dosomething("hallo");
+            var result = myService.DoSomething("hallo");
             
             //When
             Assert.AreEqual(aspectLog[0], "aspectCalled");
@@ -149,7 +149,7 @@ namespace NAdvisor.Contrib.Test
 
     public interface ISimpleService
     {
-        string Dosomething(string arguments);
+        string DoSomething(string arguments);
 
         string DoMore(string more);
     }
@@ -159,7 +159,7 @@ namespace NAdvisor.Contrib.Test
         public EventHandler<SimpleEventArgs> DoneSomething;
 
         [InterceptedBy(typeof(SimpleAspect))]
-        public string Dosomething(string arguments)
+        public string DoSomething(string arguments)
         {
             RaiseDoneSomething(arguments);
             return "DoneSomething";

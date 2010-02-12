@@ -57,15 +57,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Caching\CachingAspect.cs" />
-    <Compile Include="Caching\CachingConfig.cs" />
-    <Compile Include="Caching\CachingKeyCreation.cs" />
-    <Compile Include="Caching\CachingConfigurationValidation.cs" />
-    <Compile Include="Caching\FluentProxy.cs" />
     <Compile Include="MemoizeJointPointDefinition.cs" />
     <Compile Include="InterceptedBy\InterceptedByAttribute.cs" />
     <Compile Include="InterceptedBy\JointPointDefinition.cs" />
-    <Compile Include="Caching\KeyDetermination.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

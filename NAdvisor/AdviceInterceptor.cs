@@ -58,7 +58,7 @@ namespace NAdvisor.Core
         {
             var environment = new AspectEnvironment(_keyValueStore);
 
-            environment.ConcreteMethodInfo = invocation.GetConcreteMethod();
+            environment.ConcreteMethodInfo = invocation.MethodInvocationTarget;
             environment.ConcreteObject = _concreteInstance;
 
             environment.InterfaceMethodInfo = invocation.Method;

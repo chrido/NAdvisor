@@ -9,8 +9,8 @@ using FreeAdvice.Repositories.Interfaces;
 using FreeAdvice.Service.Interfaces;
 using FreeAdvice.Services;
 using Moq;
-using NAdvisor.Core;
 using NAdvisor.Contrib;
+using NAdvisor.Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace FreeAdvice.MSTest
