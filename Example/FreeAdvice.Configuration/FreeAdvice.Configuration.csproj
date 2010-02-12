@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{EEE750E7-0D26-4845-8AFA-9617752454A5}</ProjectGuid>
+    <ProjectGuid>{FC9AC6C3-2922-4FFD-AE90-CD983E5F34AF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NAdvisorTest</RootNamespace>
-    <AssemblyName>NAdvisorTest</AssemblyName>
+    <RootNamespace>FreeAdvice.Configuration</RootNamespace>
+    <AssemblyName>FreeAdvice.Configuration</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>
@@ -39,10 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="Moq, Version=3.1.416.3, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+    <Reference Include="Autofac, Version=1.4.3.536, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\References\moq\Moq.dll</HintPath>
+      <HintPath>..\..\References\autofac\Autofac.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -58,20 +57,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdvisorTests.cs" />
-    <Compile Include="AspectEnvironmentDictionaryTests.cs" />
-    <Compile Include="AspectEnvironmentTests.cs" />
-    <Compile Include="MSTestHelper.cs" />
-    <Compile Include="TestClasses\Target.cs" />
-    <Compile Include="TestClasses\ITarget.cs" />
-    <Compile Include="TestClasses\SimpleEventArgs.cs" />
+    <Compile Include="Configure.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SimpleAspectTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NAdvisor\NAdvisor.Core.csproj">
-      <Project>{924BDC9D-7752-496C-B0F5-379F8D390C60}</Project>
-      <Name>NAdvisor.Core</Name>
+    <ProjectReference Include="..\FreeAdvice.Common\FreeAdvice.Common.csproj">
+      <Project>{F889330D-DFBF-4805-8D5D-3EA3B593EDE2}</Project>
+      <Name>FreeAdvice.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeAdvice.DIContainer\FreeAdvice.DIContainer.csproj">
+      <Project>{7F452EC5-E286-4230-99F1-25AA78A712BB}</Project>
+      <Name>FreeAdvice.DIContainer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeAdvice.Repositories.Interfaces\FreeAdvice.Repositories.Interfaces.csproj">
+      <Project>{EF37D586-9279-434D-B22D-92C2FC60710D}</Project>
+      <Name>FreeAdvice.Repositories.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeAdvice.Repositories\FreeAdvice.Repositories.csproj">
+      <Project>{20AD9BC4-3B86-485B-9062-454D04A18F14}</Project>
+      <Name>FreeAdvice.Repositories</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -5,21 +5,13 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{EEE750E7-0D26-4845-8AFA-9617752454A5}</ProjectGuid>
+    <ProjectGuid>{0C92D349-3D54-47F7-8468-5BF36BAF3CA7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NAdvisorTest</RootNamespace>
-    <AssemblyName>NAdvisorTest</AssemblyName>
+    <RootNamespace>NAdvisor.Contrib</RootNamespace>
+    <AssemblyName>NAdvisor.Contrib</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <SccProjectName>
-    </SccProjectName>
-    <SccLocalPath>
-    </SccLocalPath>
-    <SccAuxPath>
-    </SccAuxPath>
-    <SccProvider>
-    </SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,7 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Castle.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\CastleDynamicProxy2\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.DynamicProxy2, Version=2.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\CastleDynamicProxy2\Castle.DynamicProxy2.dll</HintPath>
+    </Reference>
     <Reference Include="Moq, Version=3.1.416.3, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\References\moq\Moq.dll</HintPath>
@@ -58,15 +57,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdvisorTests.cs" />
-    <Compile Include="AspectEnvironmentDictionaryTests.cs" />
-    <Compile Include="AspectEnvironmentTests.cs" />
-    <Compile Include="MSTestHelper.cs" />
-    <Compile Include="TestClasses\Target.cs" />
-    <Compile Include="TestClasses\ITarget.cs" />
-    <Compile Include="TestClasses\SimpleEventArgs.cs" />
+    <Compile Include="MemoizeJointPointDefinition.cs" />
+    <Compile Include="InterceptedBy\InterceptedByAttribute.cs" />
+    <Compile Include="InterceptedBy\JointPointDefinition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SimpleAspectTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NAdvisor\NAdvisor.Core.csproj">

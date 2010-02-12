@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{EEE750E7-0D26-4845-8AFA-9617752454A5}</ProjectGuid>
+    <ProjectGuid>{12BEF773-E33E-4E44-B82E-2C4D7954D773}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NAdvisorTest</RootNamespace>
-    <AssemblyName>NAdvisorTest</AssemblyName>
+    <RootNamespace>FreeAdvice.Aspects</RootNamespace>
+    <AssemblyName>FreeAdvice.Aspects</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>
@@ -39,11 +39,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="Moq, Version=3.1.416.3, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\References\moq\Moq.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -58,20 +53,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdvisorTests.cs" />
-    <Compile Include="AspectEnvironmentDictionaryTests.cs" />
-    <Compile Include="AspectEnvironmentTests.cs" />
-    <Compile Include="MSTestHelper.cs" />
-    <Compile Include="TestClasses\Target.cs" />
-    <Compile Include="TestClasses\ITarget.cs" />
-    <Compile Include="TestClasses\SimpleEventArgs.cs" />
+    <Compile Include="ExternalDmsContext.cs" />
+    <Compile Include="DatabaseContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SimpleAspectTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NAdvisor\NAdvisor.Core.csproj">
+    <ProjectReference Include="..\..\NAdvisor\NAdvisor.Core.csproj">
       <Project>{924BDC9D-7752-496C-B0F5-379F8D390C60}</Project>
-      <Name>NAdvisor.Core</Name>
+      <Name>NAdvisor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FreeAdvice.Common\FreeAdvice.Common.csproj">
+      <Project>{F889330D-DFBF-4805-8D5D-3EA3B593EDE2}</Project>
+      <Name>FreeAdvice.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

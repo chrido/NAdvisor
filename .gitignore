@@ -12,4 +12,9 @@ _ReSharper*
 *.pidb
 *.userprefs
 *.orig
+<<<<<<< HEAD
 /TestResults/*
+=======
+*.resharper
+TestResults
+>>>>>>> stabilization
