@@ -1,6 +1,6 @@
 using System;
 
-namespace NAdvisor.Core
+namespace TechTalk.NAdvisor.Core
 {
     public interface IAspect
     {

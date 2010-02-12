@@ -8,8 +8,8 @@
     <ProjectGuid>{0C92D349-3D54-47F7-8468-5BF36BAF3CA7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NAdvisor.Contrib</RootNamespace>
-    <AssemblyName>NAdvisor.Contrib</AssemblyName>
+    <RootNamespace>TechTalk.NAdvisor.Contrib</RootNamespace>
+    <AssemblyName>TechTalk.NAdvisor.Contrib</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

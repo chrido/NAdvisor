@@ -1,4 +1,4 @@
-﻿namespace NAdvisor.Core
+﻿namespace TechTalk.NAdvisor.Core
 {
     public interface IKeyValueStore
     {

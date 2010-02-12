@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NAdvisor.Core;
+using TechTalk.NAdvisor.Core;
 
 namespace NAdvisorTest.SimpleAspectTests
 {

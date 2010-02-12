@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using Castle.DynamicProxy;
-using NAdvisor.Core.Implementation;
+using TechTalk.NAdvisor.Core.Implementation;
 
-namespace NAdvisor.Core
+namespace TechTalk.NAdvisor.Core
 {
     public class Advisor
     {

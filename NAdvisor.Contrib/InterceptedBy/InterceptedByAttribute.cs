@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NAdvisor.Contrib
+namespace TechTalk.NAdvisor.Contrib
 {
     public class InterceptedByAttribute : Attribute
     {

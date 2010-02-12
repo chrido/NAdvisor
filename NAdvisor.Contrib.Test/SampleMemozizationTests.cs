@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NAdvisor.Core;
+using TechTalk.NAdvisor.Core;
 
-namespace NAdvisor.Contrib.Test
+namespace TechTalk.NAdvisor.Contrib.Test
 {
     [TestClass]
     public class SampleMemozizationTest

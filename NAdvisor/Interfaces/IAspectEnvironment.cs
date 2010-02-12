@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace NAdvisor.Core
+namespace TechTalk.NAdvisor.Core
 {
     public interface IAspectEnvironment
     {

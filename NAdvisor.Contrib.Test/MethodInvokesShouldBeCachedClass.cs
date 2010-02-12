@@ -1,4 +1,4 @@
-namespace NAdvisor.Contrib.Test
+namespace TechTalk.NAdvisor.Contrib.Test
 {
     public class MethodInvokesShouldBeCachedClass : IMethodInvokesShouldBeCachedClass
     {

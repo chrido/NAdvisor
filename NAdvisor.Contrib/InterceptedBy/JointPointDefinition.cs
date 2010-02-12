@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using NAdvisor.Core;
+using TechTalk.NAdvisor.Core;
 
-namespace NAdvisor.Contrib
+namespace TechTalk.NAdvisor.Contrib
 {
     public class JointPointDefinition
     {

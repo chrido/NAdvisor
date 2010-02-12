@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using NAdvisor.Core;
+using TechTalk.NAdvisor.Core;
 
-namespace NAdvisor.Contrib.Test
+namespace TechTalk.NAdvisor.Contrib.Test
 {
     [TestClass]
     public class AttributeBasedJointPointDefinitionTests

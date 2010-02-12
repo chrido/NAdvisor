@@ -4,7 +4,7 @@ using System.Linq;
 using Castle.Core.Interceptor;
 using System.Reflection;
 
-namespace NAdvisor.Core
+namespace TechTalk.NAdvisor.Core
 {
     internal class AdviceInterceptor : IInterceptor
     {

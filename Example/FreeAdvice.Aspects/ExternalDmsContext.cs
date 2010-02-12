@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using FreeAdvice.Common;
-using NAdvisor.Core;
+using TechTalk.NAdvisor.Core;
 
 namespace FreeAdvice.Aspects
 {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NAdvisor.Core.Implementation
+namespace TechTalk.NAdvisor.Core.Implementation
 {
     internal class DictionaryKeyValueStore : IKeyValueStore
     {

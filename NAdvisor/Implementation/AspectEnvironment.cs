@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Reflection;
 using System.Collections.Generic;
-using NAdvisor.Core.Implementation;
+using TechTalk.NAdvisor.Core.Implementation;
 
-namespace NAdvisor.Core
+namespace TechTalk.NAdvisor.Core
 {
     internal class AspectEnvironment : IAspectEnvironment
     {

@@ -8,8 +8,8 @@
     <ProjectGuid>{EEE750E7-0D26-4845-8AFA-9617752454A5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NAdvisorTest</RootNamespace>
-    <AssemblyName>NAdvisorTest</AssemblyName>
+    <RootNamespace>TechTalk.NAdvisorTest</RootNamespace>
+    <AssemblyName>TechTalk.NAdvisorTest</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>

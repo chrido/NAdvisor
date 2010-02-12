@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using NAdvisor.Core;
+using TechTalk.NAdvisor.Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace NAdvisorTest

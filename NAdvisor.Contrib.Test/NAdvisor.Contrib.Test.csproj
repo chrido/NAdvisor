@@ -7,8 +7,8 @@
     <ProjectGuid>{3D4E80A5-8C83-4A6B-97F6-C46B96308CCF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NAdvisor.Contrib.Test</RootNamespace>
-    <AssemblyName>NAdvisor.Contrib.Test</AssemblyName>
+    <RootNamespace>TechTalk.NAdvisor.Contrib.Test</RootNamespace>
+    <AssemblyName>TechTalk.NAdvisor.Contrib.Test</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

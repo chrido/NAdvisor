@@ -6,7 +6,7 @@ using FreeAdvice.Common;
 using FreeAdvice.Domain;
 using FreeAdvice.Repositories.Interfaces;
 using FreeAdvice.Service.Interfaces;
-using NAdvisor.Contrib;
+using TechTalk.NAdvisor.Contrib;
 
 namespace FreeAdvice.Services
 {
