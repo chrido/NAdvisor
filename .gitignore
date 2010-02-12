@@ -12,3 +12,4 @@ _ReSharper*
 *.pidb
 *.userprefs
 *.orig
+/TestResults/*
