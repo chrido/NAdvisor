@@ -6,6 +6,7 @@ obj
 *.bak
 *.sln.cache
 _ReSharper*
+*.resharper
 */build
 */test-results
 *.pidb
