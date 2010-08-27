@@ -2,21 +2,24 @@
 NAdivsor
 #######################################################################################################################
 
-This is a small library which adds Aspects during runtime.
+NAdvisor is a small library which adds Aspects during runtime.
 
 If you are looking for traditional Aspects have a look at postsharp.org
-
-The difference compared to traditional Aspects are:
+a
+The differences compared to traditional Aspects are:
 - Aspects can be instantiated, therefor can have dependencies in the constructor (fits very well with DI)
-- Trades fast compilation against slower execution, everything is done during runtime
-- Aspects can have a different lifetime than there intercepted classes. 
+- Pointcuts/Join Points can be changed during runtime 
+- Aspects can have a different lifetime than theire intercepted classes. 
 
-Some Usecases which can't be easily solved with compile time weaved aspects:
-- unit testing with or without aspects (can be handy if you only like to test your logic)
-- JointPoints can only be determind during runtime
+Some things which are difficult to do with compile time weaved Aspects but are trivial with NAdvisor:
+- unit testing with or without aspects
+- unit testing of your logic inside the aspects
+- JointPoints can be determined during runtime
 - because aspects are normal objects, they can be instantiated, they can have dependencies. 
 - using Mocked aspects during unit tests
-- swap JointPoint definition during runtime (nice for switching on/off your performance measuring aspect)
+- swap JointPoint definition during runtime (e.g. switching on/off performance measuring aspect)
+- no impact on build time
+- readable stacktraces
 
 Usage:
 //Instantiate a new SecurityAspect
@@ -25,8 +28,8 @@ IAspect securityAspect = new SecurityAspect(user);
 //Creates a Proxy, chooses the Aspect from the List by the JointPointDefinition
 Advisor advisor = new Advisor(JointPointDefinition.AttributeBasedJointPointDefinition, new List<IAspect>() {securityAspect, loggingAspect});
 
-//Gets the Proxy which is intercepted by Aspects
-ISimpleService myService = advisor.GetAdvicedProxy<ISimpleService>(simpleService);
+//Gets a Proxy which is intercepted by the Securityaspect and Loggingaspect
+ISimpleService myService = advisor.GetAdvicedProxy<ISimpleService>(new SimpleService());
 
 
 
