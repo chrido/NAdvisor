@@ -5,7 +5,7 @@ NAdivsor
 NAdvisor is a small library which adds Aspects during runtime.
 
 If you are looking for traditional Aspects have a look at postsharp.org
-a
+
 The differences compared to traditional Aspects are:
 - Aspects can be instantiated, therefor can have dependencies in the constructor (fits very well with DI)
 - Pointcuts/Join Points can be changed during runtime 
